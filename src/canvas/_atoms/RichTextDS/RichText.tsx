@@ -1,13 +1,14 @@
 import { FC } from 'react';
 import { RichTextProps } from '.';
 import { nodeParser } from '@kontent-ai/delivery-node-parser';
-import { createDeliveryClient, createRichTextHtmlResolver, linkedItemsHelper } from '@kontent-ai/delivery-sdk';
+import { createDeliveryClient, createRichTextHtmlResolver } from '@kontent-ai/delivery-sdk';
 
 const deliveryClient = createDeliveryClient({
   environmentId: process.env.KONTENT_AI_ENVIRONMENT_ID || '',
 });
 
 export const RichText: FC<RichTextProps> = async ({ text }) => {
+  // @typescript-eslint/no-explicit-any
   const response = await deliveryClient.item<any>('ai_robotic_powered_vehicle_kit_25a0265').toPromise();
   const richTextElement = response.data.item.elements.content;
 
