@@ -36,3 +36,4 @@ jobs:
         env:
           UNIFORM_PROJECT_ID: ${{ secrets.UNIFORM_PROJECT_ID }}
           UNIFORM_API_KEY: ${{ secrets.UNIFORM_API_KEY }}
+          KONTENT_AI_ENVIRONMENT_ID: ${{ secrets.KONTENT_AI_ENVIRONMENT_ID }}
